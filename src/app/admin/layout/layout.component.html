@@ -1,0 +1,22 @@
+<p>Template ADMIN</p>
+<div class="nav"><a routerLink="/admin">admin</a>
+    <a routerLink="/admin/perfil">Perfil</a>
+    <a routerLink="/admin/categoria">Categoria</a></div>
+
+<router-outlet></router-outlet>
+
+<style>
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    a{
+        text-decoration: none;
+        padding: 1rem;
+        background-color: brown;
+        border-radius: 2rem;
+        color: #fff;
+    }
+</style>

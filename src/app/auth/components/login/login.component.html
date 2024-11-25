@@ -1,1 +1,13 @@
-<p>login works!</p>
+<h1>Ingresar</h1>
+{{loginForm.value | json}}
+<form [formGroup]="loginForm">
+    <label for="">Ingrese su correo</label>
+    <br>
+    <input type="email" formControlName="email"  placeholder="Ingrese su correo">
+    <br>
+    <label for="">Ingrese su contraseña</label>
+    <br>
+    <input type="password" formControlName="password" placeholder="Ingresa tu contraseña">
+    <br>
+    <button (click)="funIngresar()">Ingresar</button>
+</form>
