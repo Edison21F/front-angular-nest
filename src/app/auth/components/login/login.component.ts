@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +10,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    email: new FormControl("admin@mail.com"),
-    password: new FormControl("admin1234")
+    email: new FormControl("ela@mail.com",[Validators.email, Validators.required]),
+    password: new FormControl("11111", Validators.required)
   })
 
   funIngresar(){
