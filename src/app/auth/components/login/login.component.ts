@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +11,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
+  private authService=inject(AuthService)
+
   loginForm = new FormGroup({
-    email: new FormControl("ela@mail.com",[Validators.email, Validators.required]),
-    password: new FormControl("11111", Validators.required)
+    email: new FormControl("",[Validators.email, Validators.required]),
+    password: new FormControl("", Validators.required)
   })
 
   funIngresar(){
-    alert("Ingresando.....")
+    this.authService.loginConNest(this.loginForm.value).subscribe(
+      (res)=>{
+        console.log(res)
+      },
+      (err)=>{
+        console.log(err)
+      }
+    )
+    //alert("Ingresando.....")
   }
 
 }
