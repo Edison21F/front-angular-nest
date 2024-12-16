@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path:'producto',
         component:ProductoComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'perfil',
       }
     ]
   },
